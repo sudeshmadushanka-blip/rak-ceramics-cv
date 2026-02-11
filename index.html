@@ -9,447 +9,541 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
             line-height: 1.6;
             padding: 20px;
+            min-height: 100vh;
         }
         
-        .container {
+        .cv-container {
             max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* RAK Ceramics CV Section */
-        .rak-cv-section {
-            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            margin: 40px auto;
-            position: relative;
+            margin: 30px auto;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
             overflow: hidden;
+            position: relative;
         }
         
-        .rak-cv-section::before {
+        .cv-header {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cv-header::before {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 6px;
             background: #e74c3c;
-        }
-        
-        .header-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            margin-bottom: 30px;
-            border: 3px solid #e74c3c;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
         }
         
         .company-logo {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .employee-id-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: rgba(255,255,255,0.95);
             color: #2c3e50;
+            padding: 10px 25px;
+            border-radius: 35px;
             font-weight: 800;
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 2px solid #e74c3c;
         }
         
-        .employee-photo-container {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 6px solid #e74c3c;
-            padding: 5px;
-            background: white;
-            margin: 25px auto;
-            position: relative;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 50px;
         }
         
-        .employee-photo {
-            width: 100%;
-            height: 100%;
+        .profile-photo {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             object-fit: cover;
         }
         
-        .employee-id {
-            position: absolute;
-            bottom: -15px;
-            right: -15px;
-            background: #2c3e50;
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .employee-name {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 15px;
             color: white;
-            padding: 8px 15px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 13px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         
-        .action-button {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        .employee-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+        }
+        
+        .department-tag {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
-            border: none;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+            padding: 12px 30px;
+            border-radius: 35px;
+            font-weight: 800;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 15px;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
         }
         
-        .action-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.4);
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            border-left: 6px solid #3498db;
+        .cv-content {
+            padding: 50px;
         }
         
         .section-title {
             color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            font-size: 22px;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 800;
+            font-size: 28px;
+            position: relative;
         }
         
-        .department-badge {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 15px;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: 10px;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 120px;
+            height: 4px;
+            background: #e74c3c;
         }
         
-        .qr-code-container {
-            width: 150px;
-            height: 150px;
+        .card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: none;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .certificate-card {
             background: white;
             border-radius: 15px;
+            padding: 25px;
+            border-left: 6px solid #3498db;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certificate-icon {
+            font-size: 45px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .skills-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .skill-badge {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #1565c0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 700;
+            border: 2px solid #90caf9;
+            transition: all 0.3s;
+        }
+        
+        .skill-badge:hover {
+            background: linear-gradient(135deg, #bbdefb, #90caf9);
+            transform: scale(1.05);
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.4s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 12px 25px rgba(46, 204, 113, 0.4);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(46, 204, 113, 0.6);
+        }
+        
+        .action-btn.print {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 12px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .action-btn.print:hover {
+            box-shadow: 0 20px 40px rgba(52, 152, 219, 0.6);
+        }
+        
+        .qr-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            background: white;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 25px;
+            border: 4px solid #3498db;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .qr-code:hover {
+            transform: scale(1.08);
+        }
+        
+        .certificate-photo {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
             margin: 20px auto;
-            border: 3px solid #3498db;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            display: block;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            border: 4px solid #e74c3c;
+            transition: transform 0.3s;
         }
         
-        .footer-section {
-            background: linear-gradient(135deg, #2c3e50, #4a6491);
-            color: white;
-            padding: 25px;
+        .certificate-photo:hover {
+            transform: scale(1.03);
+        }
+        
+        .service-timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 25px 0;
+        }
+        
+        .service-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #e74c3c;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+        
+        .contact-info-box {
+            background: white;
             border-radius: 15px;
-            margin-top: 30px;
-            text-align: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 5px solid #3498db;
         }
         
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .rak-cv-section {
-                padding: 20px;
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
             }
             
-            .header-card {
-                padding: 25px;
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .cv-content {
+                padding: 30px 20px;
+            }
+            
+            .employee-name {
+                font-size: 32px;
             }
             
             .company-logo {
+                font-size: 28px;
+            }
+            
+            .action-btn {
+                padding: 15px 35px;
+                font-size: 16px;
+            }
+            
+            .section-title {
                 font-size: 24px;
-            }
-            
-            .employee-photo-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .action-button {
-                padding: 12px 25px;
-                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <section class="rak-cv-section" id="cv-section">
-            <!-- Header Section -->
-            <div class="header-card">
-                <div class="company-logo">
-                    <i class="fas fa-building"></i> RAK CERAMICS PJSC
-                </div>
-                <p class="text-muted mb-4">
-                    <i class="fas fa-file-contract"></i> OFFICIAL EMPLOYEE RECORD
-                </p>
+    <div class="cv-container">
+        <div class="cv-header">
+            <div class="employee-id-badge">
+                <i class="fas fa-id-card"></i> Employee ID: 99018571
+            </div>
+            
+            <div class="company-logo">
+                <i class="fas fa-building"></i> RAK CERAMICS PJSC
+            </div>
+            <p class="mb-4 fs-5">
+                <i class="fas fa-file-contract"></i> OFFICIAL EMPLOYEE RECORD
+            </p>
+            
+            <div class="profile-section">
+                <img src="https://via.placeholder.com/200x200/2c3e50/ffffff?text=SM" 
+                     alt="Sudesh Madushanka" class="profile-photo">
                 
-                <div class="employee-photo-container">
-                    <img src="https://via.placeholder.com/180x180/2c3e50/ffffff?text=SM" 
-                         alt="Sudesh Madushanka" class="employee-photo">
-                    <div class="employee-id">ID: 99018571</div>
-                </div>
-                
-                <h1 style="color: #2c3e50; margin-bottom: 10px;">SUDESH MADUSHANKA</h1>
-                <h4 style="margin-bottom: 20px;">
-                    <i class="fas fa-user-tie"></i> Operations Support Assistant
-                    <span class="department-badge">Canary Shorting</span>
-                </h4>
-                
-                <p class="text-muted mb-4">
-                    <i class="fas fa-map-marker-alt"></i> RAK Ceramics UAE, Ras Al Khaimah
-                </p>
-                
-                <div style="margin: 30px 0;">
-                    <button id="download-pdf" class="action-button">
-                        <i class="fas fa-file-pdf"></i> Download PDF CV
-                    </button>
-                    <button id="print-cv" class="action-button" style="background: linear-gradient(135deg, #3498db, #2980b9);">
-                        <i class="fas fa-print"></i> Print CV
-                    </button>
-                </div>
-                
-                <div>
-                    <div class="qr-code-container" id="qr-code">
-                        <i class="fas fa-qrcode" style="font-size: 80px; color: #2c3e50;"></i>
+                <div class="profile-info">
+                    <h1 class="employee-name">SUDESH MADUSHANKA</h1>
+                    <h3 class="employee-title">
+                        <i class="fas fa-user-tie"></i> Operations Support Assistant
+                    </h3>
+                    <div class="department-tag">
+                        <i class="fas fa-building"></i> Canary Shorting Department
                     </div>
-                    <p class="text-muted mt-3">
-                        <i class="fas fa-id-badge"></i> Employee ID: 99018571
+                    <p class="mt-3 fs-5">
+                        <i class="fas fa-map-marker-alt"></i> RAK Ceramics UAE, Ras Al Khaimah
                     </p>
-                    <a href="https://sudeshmadushanka-blip.github.io/portfolio-website/" 
-                       target="_blank" 
-                       class="btn btn-outline-primary mt-2">
-                        <i class="fas fa-external-link-alt"></i> View Portfolio
-                    </a>
                 </div>
             </div>
+        </div>
+        
+        <div class="cv-content">
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="download-pdf" class="action-btn">
+                    <i class="fas fa-file-pdf"></i> Download PDF CV
+                </button>
+                <button id="print-cv" class="action-btn print">
+                    <i class="fas fa-print"></i> Print CV
+                </button>
+            </div>
             
-            <!-- Content Section -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="info-card">
-                        <h5 class="section-title">
-                            <i class="fas fa-briefcase"></i> Current Position
-                        </h5>
-                        <p><strong>RAK Ceramics PJSC, Ras Al Khaimah, UAE</strong></p>
-                        <p><i class="fas fa-user-tie text-primary"></i> Operations Support Assistant</p>
-                        <p><i class="fas fa-building text-primary"></i> Canary Shorting Department</p>
-                        <p><i class="fas fa-map-marker-alt text-primary"></i> Ras Al Khaimah Industrial Zone</p>
-                        
-                        <hr>
-                        
-                        <h6><i class="fas fa-tasks"></i> Responsibilities:</h6>
-                        <ul>
-                            <li><i class="fas fa-check text-success"></i> Operational support for Canary Shorting Department</li>
-                            <li><i class="fas fa-check text-success"></i> Document control and records management</li>
-                            <li><i class="fas fa-check text-success"></i> Coordination with production teams</li>
-                            <li><i class="fas fa-check text-success"></i> Data entry and reporting</li>
-                            <li><i class="fas fa-check text-success"></i> Quality control documentation</li>
-                        </ul>
+            <!-- Current Position -->
+            <div class="card">
+                <h3 class="section-title">
+                    <i class="fas fa-briefcase"></i> Current Position
+                </h3>
+                <p class="fs-5"><strong>RAK Ceramics PJSC, Ras Al Khaimah, UAE</strong></p>
+                <p class="fs-5"><i class="fas fa-user-tie text-primary"></i> Operations Support Assistant</p>
+                <p class="fs-5"><i class="fas fa-building text-primary"></i> Canary Shorting Department</p>
+                
+                <h5 class="mt-4"><i class="fas fa-tasks"></i> Key Responsibilities:</h5>
+                <ul class="fs-5">
+                    <li>Operational support for Canary Shorting Department</li>
+                    <li>Document control and records management</li>
+                    <li>Coordination with production teams</li>
+                    <li>Data entry and reporting</li>
+                    <li>Quality control documentation</li>
+                    <li>Administrative support functions</li>
+                </ul>
+            </div>
+            
+            <!-- RDA Service History -->
+            <div class="card">
+                <h3 class="section-title">
+                    <i class="fas fa-history"></i> RDA Service History (19 Years)
+                </h3>
+                
+                <p class="fs-5"><strong>Road Development Authority (RDA) – Sri Lanka</strong></p>
+                <p class="fs-5">Administrative Clerk / Document Controller</p>
+                <p class="text-muted fs-5">
+                    <i class="fas fa-calendar-alt"></i> November 2004 – September 2023 
+                    <span class="badge bg-info fs-6">19 Years Experience</span>
+                </p>
+                
+                <!-- RDA Service Timeline -->
+                <div class="service-timeline mt-4">
+                    <div class="timeline-item">
+                        <h6><i class="fas fa-map-marker text-success"></i> Provincial Director's Office - Uva</h6>
+                        <p class="text-muted">09/11/2004 - 22/10/2007 (3 Years)</p>
                     </div>
                     
-                    <div class="info-card">
-                        <h5 class="section-title">
-                            <i class="fas fa-graduation-cap"></i> Education
-                        </h5>
-                        <p><strong>National Certificate - Engineering Draughtsmanship</strong></p>
-                        <p class="text-muted">Technical College, Nuwara Eliya | 2002</p>
-                        
-                        <p><strong>G.C.E. Ordinary Level - 1997</strong></p>
-                        <p class="text-muted">Index No: 74608568</p>
-                        
-                        <p><strong>RDA Clerical Training - 2005</strong></p>
-                        <p class="text-muted">Road Development Authority, Sri Lanka</p>
+                    <div class="timeline-item">
+                        <h6><i class="fas fa-map-marker text-success"></i> Executive Engineer's Office - Badulla</h6>
+                        <p class="text-muted">23/10/2007 - 09/03/2010 (2.5 Years)</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h6><i class="fas fa-map-marker text-success"></i> Chief Engineer's Office - Kandy</h6>
+                        <p class="text-muted">10/03/2010 - 19/04/2017 (7 Years)</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h6><i class="fas fa-map-marker text-success"></i> Executive Engineer's Office - Kadugannawa</h6>
+                        <p class="text-muted">20/04/2017 - 25/09/2023 (6.5 Years)</p>
                     </div>
                 </div>
                 
-                <div class="col-md-6">
-                    <div class="info-card">
-                        <h5 class="section-title">
-                            <i class="fas fa-history"></i> Previous Experience
-                        </h5>
-                        <p><strong>Road Development Authority (RDA) – Sri Lanka</strong></p>
-                        <p>Administrative Clerk / Document Controller</p>
-                        <p class="text-muted">
-                            <i class="fas fa-calendar-alt"></i> November 2004 – September 2023 
-                            <span class="badge bg-info">19 Years</span>
-                        </p>
-                        
-                        <div class="alert alert-light mt-3">
-                            <i class="fas fa-file-contract"></i>
-                            <strong>Service Record:</strong>
-                            <span class="badge bg-success">Efficiency: GOOD</span>
-                            <span class="badge bg-success">Conduct: GOOD</span>
+                <!-- RDA Service Letter -->
+                <div class="mt-4 p-4" style="background: #f8f9fa; border-radius: 15px; border-left: 5px solid #27ae60;">
+                    <h6><i class="fas fa-file-alt text-success"></i> RDA Service Letter Summary:</h6>
+                    <p class="mb-1"><strong>Position held:</strong> Clerk</p>
+                    <p class="mb-1"><strong>Total Service:</strong> 19 Years</p>
+                    <p class="mb-1"><strong>Efficiency Rating:</strong> <span class="badge bg-success">GOOD</span></p>
+                    <p class="mb-0"><strong>General Conduct:</strong> <span class="badge bg-success">GOOD</span></p>
+                </div>
+                
+                <!-- RDA Training Certificate -->
+                <div class="mt-4">
+                    <h5><i class="fas fa-certificate text-warning"></i> RDA Training Certificate:</h5>
+                    <img src="All certificate.jpg" alt="RDA Clerical Training Certificate" class="certificate-photo">
+                    <p class="text-center mt-2">
+                        <strong>Clerical Officers Training Programme</strong><br>
+                        <span class="text-muted">Training Division of Road Development Authority | March 2005</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="card">
+                <h3 class="section-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </h3>
+                
+                <!-- National Certificate -->
+                <div class="mb-4">
+                    <h5><i class="fas fa-certificate text-primary"></i> National Certificate in Engineering Draughtsmanship</h5>
+                    <p class="mb-1">Technical College, Nuwara Eliya | 2002</p>
+                    <img src="IMG-20250907-WA0001.jpg" alt="Engineering Draughtsmanship Certificate" class="certificate-photo">
+                    <div class="mt-3">
+                        <strong>Subjects Completed:</strong> 
+                        <span class="badge bg-info m-1">Computer Aided Design (C)</span>
+                        <span class="badge bg-info m-1">Structural Mechanics (S)</span>
+                        <span class="badge bg-info m-1">Construction Draughtsmanship (S)</span>
+                        <span class="badge bg-info m-1">Geometrical & Mechanical Drawing (S)</span>
+                    </div>
+                </div>
+                
+                <!-- GCE O/L -->
+                <div class="mb-4">
+                    <h5><i class="fas fa-certificate text-primary"></i> G.C.E. Ordinary Level - 1997</h5>
+                    <p class="mb-1">Index No: 74608568</p>
+                    <img src="General Certificate of Education (Ordinary Level) Examination.jpg" 
+                         alt="GCE O/L Certificate" class="certificate-photo">
+                    <div class="mt-3">
+                        <strong>Results:</strong>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-success">Buddhism (C)</span>
+                            <span class="badge bg-success">Sinhala Language & Literature (C)</span>
+                            <span class="badge bg-success">Music – Sinhala (C)</span>
+                            <span class="badge bg-info">History & Social Studies (S)</span>
+                            <span class="badge bg-info">Mathematics (S)</span>
+                            <span class="badge bg-success">Metal Work (C)</span>
                         </div>
                     </div>
-                    
-                    <div class="info-card">
-                        <h5 class="section-title">
-                            <i class="fas fa-language"></i> Languages & Skills
-                        </h5>
-                        
-                        <h6>Languages:</h6>
-                        <p><span class="badge bg-success">Sinhala: Native</span>
-                        <span class="badge bg-info">English: Good</span>
-                        <span class="badge bg-warning">Tamil: Basic</span></p>
-                        
-                        <h6 class="mt-3">Technical Skills:</h6>
-                        <div>
-                            <span class="badge bg-light text-dark border m-1">MS Office</span>
-                            <span class="badge bg-light text-dark border m-1">Document Management</span>
-                            <span class="badge bg-light text-dark border m-1">Operational Support</span>
-                            <span class="badge bg-light text-dark border m-1">Data Entry</span>
-                            <span class="badge bg-light text-dark border m-1">Quality Control</span>
-                            <span class="badge bg-light text-dark border m-1">Administrative Support</span>
+                </div>
+                
+                <!-- Taisei Corporation Training -->
+                <div>
+                    <h5><i class="fas fa-certificate text-primary"></i> Practical Training - Taisei Corporation</h5>
+                    <p class="mb-1">Project for Improvement of Nuwara Eliya Water Supply | 2002-2003</p>
+                    <img src="IMG-20250907-WA0000_edit_142405357270935.jpg" 
+                         alt="Taisei Corporation Training Certificate" class="certificate-photo">
+                    <div class="mt-3">
+                        <strong>Training Areas:</strong>
+                        <div class="skills-badges">
+                            <span class="skill-badge">Building & Pipe Bridge Constructions</span>
+                            <span class="skill-badge">Pressure Testing Procedure</span>
+                            <span class="skill-badge">Surveying</span>
+                            <span class="skill-badge">Pipe Laying Works (DCIP & PVC)</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Contact Information -->
-            <div class="info-card">
-                <h5 class="section-title">
-                    <i class="fas fa-address-card"></i> Contact Information
-                </h5>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-phone text-primary"></i> <strong>Phone:</strong></p>
-                        <p>+971 56 884 0769</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-envelope text-primary"></i> <strong>Email:</strong></p>
-                        <p>sudheshmadushanka@gmail.com</p>
-                        <small class="text-muted">(සුදේෂ් මධුෂංක)</small>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fab fa-linkedin text-primary"></i> <strong>LinkedIn:</strong></p>
-                        <p>Sudesh Madushanka</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-passport text-primary"></i> <strong>Visa Status:</strong></p>
-                        <p>Employment Visa</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Personal Details -->
-            <div class="info-card">
-                <h5 class="section-title">
-                    <i class="fas fa-user"></i> Personal Details
-                </h5>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-globe"></i> <strong>Nationality:</strong></p>
-                        <p>Sri Lankan</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-birthday-cake"></i> <strong>Date of Birth:</strong></p>
-                        <p>21 October 1980</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-heart"></i> <strong>Marital Status:</strong></p>
-                        <p>Married</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <p><i class="fas fa-id-card"></i> <strong>National ID:</strong></p>
-                        <p>802952147V</p>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <p><i class="fas fa-signature"></i> <strong>Preferred Name:</strong></p>
-                    <p>Sudesh Madushanka (සුදේෂ් මධුෂංක)</p>
-                </div>
-            </div>
-            
-            <!-- Footer -->
-            <div class="footer-section">
-                <h5><i class="fas fa-file-contract"></i> RAK CERAMICS EMPLOYEE RECORD</h5>
-                <p>Official Employee File No: 99018571 | Canary Shorting Department</p>
-                <p>Operations Support Assistant | RAK Ceramics UAE, Ras Al Khaimah</p>
-                <p class="mb-0">
-                    <i class="fas fa-calendar-alt"></i> Updated: February 2026 | 
-                    <i class="fas fa-user-shield"></i> For Official Reference
-                </p>
-            </div>
-        </section>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script>
-        // PDF Download
-        document.getElementById('download-pdf').addEventListener('click', function() {
-            const element = document.getElementById('cv-section');
-            const button = this;
-            
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-            button.disabled = true;
-            
-            const options = {
-                margin: 10,
-                filename: 'RAK_Ceramics_CV_Sudesh_Madushanka.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    backgroundColor: '#ffffff'
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait' 
-                }
-            };
-            
-            html2pdf().set(options).from(element)
-                .then(() => {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    alert('CV downloaded successfully!');
-                })
-                .catch(err => {
-                    console.error(err);
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    alert('Failed to download. Please try again.');
-                });
-        });
-        
-        // Print Function
-        document.getElementById('print-cv').addEventListener('click', function() {
-            window.print();
-        });
-        
-        // QR Code Click
-        document.getElementById('qr-code').addEventListener('click', function() {
-            window.open('https://sudeshmadushanka-blip.github.io/portfolio-website/', '_blank');
-        });
-        
-        // Console Log
-        console.log('RAK Ceramics CV - Sudesh Madushanka');
-        console.log('Employee ID: 99018571');
-        console.log('Department: Canary Shorting');
-    </script>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-  </html>
+            <!-- Certifications & Training -->
+            <div class="card">
+          
