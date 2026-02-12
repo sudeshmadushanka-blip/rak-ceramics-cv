@@ -2,500 +2,544 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudesh Madushanka Samarakoond - Administrative Assistant | RAK Ceramics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Sudesh Madushanka - Administrative Assistant | RAK Ceramics</title>
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- html2pdf.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
+            background-color: #f4f7fc;
             padding: 20px;
-            min-height: 100vh;
+            color: #2c3e50;
         }
         
-        .cv-container {
-            max-width: 1200px;
-            margin: 30px auto;
+        .cv-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             overflow: hidden;
-            position: relative;
         }
         
+        /* Header Section */
         .cv-header {
-            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            background: linear-gradient(145deg, #0b2c4a, #123b5e);
             color: white;
-            padding: 50px 40px;
-            text-align: center;
+            padding: 35px 40px;
             position: relative;
         }
         
-        .cv-header::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: #e74c3c;
-        }
-        
-        .company-logo {
-            font-size: 40px;
-            font-weight: 900;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        
-        .employee-id-badge {
+        .employee-id {
             position: absolute;
             top: 25px;
-            right: 25px;
-            background: rgba(255,255,255,0.95);
-            color: #2c3e50;
-            padding: 10px 25px;
-            border-radius: 35px;
-            font-weight: 800;
+            right: 30px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 22px;
+            border-radius: 40px;
             font-size: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            border: 2px solid #e74c3c;
-        }
-        
-        .profile-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-        
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 8px solid white;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            object-fit: cover;
-            background: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            color: #1a2980;
-        }
-        
-        .profile-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .employee-name {
-            font-size: 42px;
-            font-weight: 900;
-            margin-bottom: 15px;
-            color: white;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        
-        .employee-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #f8f9fa;
             font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(5px);
         }
         
-        .department-tag {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 35px;
+        .company-title {
+            font-size: 32px;
             font-weight: 800;
-            font-size: 18px;
-            display: inline-block;
-            margin-top: 15px;
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
         
-        .cv-content {
-            padding: 50px;
+        .company-sub {
+            font-size: 16px;
+            opacity: 0.9;
+            border-bottom: 2px solid #e74c3c;
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .name-large {
+            font-size: 46px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .designation {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffeaa7;
+        }
+        
+        .badge-dept {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(231,76,60,0.4);
+            margin-bottom: 18px;
+        }
+        
+        .location {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 20px;
+            background: white;
+            border-bottom: 1px solid #eef2f6;
+            flex-wrap: wrap;
+        }
+        
+        .btn-download {
+            background: linear-gradient(145deg, #27ae60, #229954);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(39,174,96,0.3);
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-print {
+            background: linear-gradient(145deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(52,152,219,0.3);
+            transition: 0.3s;
+        }
+        
+        .btn-download:hover, .btn-print:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Contact Bar */
+        .contact-bar {
+            background: #f8fafc;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        
+        .contact-item i {
+            width: 38px;
+            height: 38px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3498db;
+            font-size: 18px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px;
         }
         
         .section-title {
-            color: #2c3e50;
-            border-bottom: 4px solid #3498db;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+            font-size: 24px;
             font-weight: 800;
-            font-size: 28px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 120px;
-            height: 4px;
-            background: #e74c3c;
-        }
-        
-        .card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border: none;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s;
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .skills-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-        
-        .skill-badge {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            color: #1565c0;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 15px;
-            font-weight: 700;
-            border: 2px solid #90caf9;
-            transition: all 0.3s;
-        }
-        
-        .action-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin: 50px 0;
-            flex-wrap: wrap;
-        }
-        
-        .action-btn {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
-            border: none;
-            padding: 18px 45px;
-            border-radius: 60px;
-            font-weight: 800;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.4s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 12px 25px rgba(46, 204, 113, 0.4);
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(46, 204, 113, 0.6);
-        }
-        
-        .action-btn.print {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            box-shadow: 0 12px 25px rgba(52, 152, 219, 0.4);
-        }
-        
-        .contact-bar {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            border-left: 5px solid #e74c3c;
-        }
-        
-        .service-timeline {
-            position: relative;
-            padding-left: 30px;
-            margin: 25px 0;
-        }
-        
-        .service-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #3498db;
-            border-radius: 2px;
-        }
-        
-        .timeline-item {
-            position: relative;
+            color: #0b2c4a;
+            border-bottom: 4px solid #e74c3c;
+            padding-bottom: 12px;
             margin-bottom: 25px;
-            padding-left: 30px;
+            display: inline-block;
         }
         
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 8px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #e74c3c;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #3498db;
-        }
-        
-        .contact-info-box {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            height: 100%;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border-top: 5px solid #3498db;
+        .profile-text {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 16px;
+            font-size: 17px;
+            line-height: 1.7;
+            border-left: 6px solid #3498db;
+            margin-bottom: 35px;
         }
         
         .competency-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 15px;
+            margin: 25px 0 35px;
         }
         
         .competency-item {
-            background: white;
+            background: #f0f7ff;
             padding: 12px 20px;
-            border-radius: 30px;
-            border-left: 4px solid #e74c3c;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-radius: 12px;
+            font-size: 16px;
             font-weight: 500;
+            border-left: 4px solid #3498db;
         }
         
-        .certificate-card {
+        .competency-item i {
+            color: #27ae60;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        
+        .exp-card {
             background: white;
-            border-radius: 15px;
-            padding: 25px;
-            border-left: 6px solid #3498db;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            height: 100%;
-            transition: transform 0.3s;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 25px;
         }
         
-        .certificate-card:hover {
-            transform: translateY(-5px);
+        .exp-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0b2c4a;
+            margin-bottom: 8px;
         }
         
-        .certificate-icon {
-            font-size: 40px;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        
-        .language-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-bottom: 4px solid #3498db;
-        }
-        
-        .progress {
-            height: 8px;
-            border-radius: 4px;
+        .exp-period {
+            display: inline-block;
+            background: #ffeaa7;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #2d3436;
             margin: 15px 0;
         }
         
-        .qr-section {
+        .exp-detail {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+        
+        .exp-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .exp-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+        
+        .exp-list li i {
+            color: #27ae60;
+            font-size: 16px;
+            width: 20px;
             text-align: center;
-            margin: 50px 0;
-            padding: 40px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .qr-box {
+            background: linear-gradient(145deg, #f8fafc, #edf2f7);
+            padding: 35px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 40px;
         }
         
         .qr-code {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             background: white;
+            margin: 0 auto 20px;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
             border: 4px solid #3498db;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .qr-code i {
+            font-size: 90px;
+            color: #0b2c4a;
+        }
+        
+        .footer {
+            background: #0b2c4a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 16px;
         }
         
         @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .employee-name {
-                font-size: 32px;
-            }
-            .cv-content {
-                padding: 30px 20px;
-            }
+            .cv-header { padding: 30px 25px; }
+            .name-large { font-size: 36px; }
+            .company-title { font-size: 26px; }
+            .contact-bar { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .main-content { padding: 25px; }
+            .employee-id { position: static; display: inline-block; margin-bottom: 15px; }
         }
     </style>
 </head>
 <body>
-    <div class="cv-container" id="cv-content">
+    <div class="cv-wrapper" id="cv-content">
         <!-- HEADER SECTION -->
         <div class="cv-header">
-            <div class="employee-id-badge">
-                <i class="fas fa-id-card"></i> Employee ID: 99018571
+            <div class="employee-id">
+                <i class="fas fa-id-card me-2"></i> Employee ID: 99018571
             </div>
             
-            <div class="company-logo">
-                <i class="fas fa-building"></i> RAK CERAMICS PJSC
+            <div class="company-title">
+                <i class="fas fa-building me-2"></i> RAK CERAMICS PJSC
             </div>
-            <p class="mb-4 fs-5">
-                <i class="fas fa-file-contract"></i> OFFICIAL EMPLOYEE RECORD
-            </p>
+            <div class="company-sub">
+                OFFICIAL EMPLOYEE RECORD
+            </div>
             
-            <div class="profile-section">
-                <div class="profile-photo">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-                
-                <div class="profile-info">
-                    <h1 class="employee-name">SUDESH MADUSHANKA SAMARAKOON</h1>
-                    <h3 class="employee-title">
-                        <i class="fas fa-user-tie"></i> Administrative Assistant | Office Assistant | Administrative Clerk
-                    </h3>
-                    <div class="department-tag">
-                        <i class="fas fa-building"></i> Canary Shorting Department
-                    </div>
-                    <p class="mt-3 fs-5">
-                        <i class="fas fa-map-marker-alt"></i> Al Hamra, Al Jazeera, Ras Al Khaimah, UAE
-                    </p>
-                </div>
+            <div class="name-large">
+                SUDESH MADUSHANKA<br>SAMARAKOON
+            </div>
+            
+            <div class="designation">
+                <i class="fas fa-user-tie me-2"></i> Administrative Assistant | Office Assistant | Administrative Clerk
+            </div>
+            
+            <div class="badge-dept">
+                <i class="fas fa-shield-alt me-2"></i> Canary Shorting Department
+            </div>
+            
+            <div class="location">
+                <i class="fas fa-map-marker-alt me-2"></i> Al Hamra, Al Jazeera, Ras Al Khaimah, UAE
+            </div>
+        </div>
+        
+        <!-- ACTION BUTTONS -->
+        <div class="action-bar">
+            <button id="downloadPDF" class="btn-download">
+                <i class="fas fa-file-pdf"></i> Download PDF CV
+            </button>
+            <button id="printCV" class="btn-print">
+                <i class="fas fa-print"></i> Print CV
+            </button>
+        </div>
+        
+        <!-- CONTACT BAR -->
+        <div class="contact-bar">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>+971 56 884 0769</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>sudheshmadushanka@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-passport"></i>
+                <span>Visa: Employment | Available: Immediate</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>sudhesh-madushanka-588332284</span>
             </div>
         </div>
         
         <!-- MAIN CONTENT -->
-        <div class="cv-content">
-            <!-- ACTION BUTTONS -->
-            <div class="action-buttons">
-                <button id="download-pdf" class="action-btn">
-                    <i class="fas fa-file-pdf"></i> Download PDF CV
-                </button>
-                <button id="print-cv" class="action-btn print">
-                    <i class="fas fa-print"></i> Print CV
-                </button>
+        <div class="main-content">
+            <!-- PROFILE SUMMARY -->
+            <h2 class="section-title">
+                <i class="fas fa-user-circle me-2"></i> Profile Summary
+            </h2>
+            
+            <div class="profile-text">
+                <p class="mb-0 fs-5">Highly experienced administrative professional with <strong>19 years of service at the Road Development Authority (RDA), Sri Lanka</strong>, and currently working as Operations Support Assistant at <strong>RAK CERAMICS since August 2024</strong>. Proven expertise in office administration, documentation management, data entry, and public relations. Seeking to leverage extensive clerical experience and strong organizational skills in an administrative role within RAK Ceramics.</p>
             </div>
             
-            <!-- CONTACT BAR - COMPLETE -->
-            <div class="contact-bar">
-                <div class="row align-items-center">
-                    <div class="col-md-3 mb-2 mb-md-0">
-                        <i class="fas fa-phone-alt text-primary me-2"></i> +971 56 884 0769
-                    </div>
-                    <div class="col-md-3 mb-2 mb-md-0">
-                        <i class="fas fa-envelope text-primary me-2"></i> sudheshmadushanka@gmail.com
-                    </div>
-                    <div class="col-md-3 mb-2 mb-md-0">
-                        <i class="fas fa-id-card text-primary me-2"></i> Visa: Employment | Available: Immediate
-                    </div>
-                    <div class="col-md-3">
-                        <i class="fab fa-linkedin text-primary me-2"></i> linkedin.com/in/sudhesh-madushanka-588332284
-                    </div>
+            <!-- CORE COMPETENCIES -->
+            <h2 class="section-title">
+                <i class="fas fa-cogs me-2"></i> Core Competencies
+            </h2>
+            
+            <div class="competency-grid">
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Office Administration & Coordination</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Filing & Documentation Management</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Data Entry (Fast & Accurate)</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> MS Word & Excel Proficiency</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Customer Service & Public Handling</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Report Preparation & Correspondence</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Scheduling & Meeting Coordination</div>
+                <div class="competency-item"><i class="fas fa-check-circle"></i> Database & Register Maintenance</div>
+            </div>
+            
+            <!-- PROFESSIONAL EXPERIENCE -->
+            <h2 class="section-title">
+                <i class="fas fa-briefcase me-2"></i> Professional Experience
+            </h2>
+            
+            <!-- RAK CERAMICS -->
+            <div class="exp-card">
+                <div class="exp-title">
+                    <i class="fas fa-building text-primary me-2"></i> RAK CERAMICS - Ras Al Khaimah, UAE
                 </div>
+                <div class="fs-5 fw-semibold mb-2">Operations Support Assistant (Helper)</div>
+                <span class="exp-period">
+                    <i class="fas fa-calendar-alt me-2"></i> August 2024 – Present
+                </span>
+                <p class="exp-detail mt-3">
+                    Currently employed at RAK CERAMICS, demonstrating strong work ethic, reliability, and adaptability in the manufacturing environment. Eager to transition into an administrative role within the organization to utilize extensive clerical and office management skills.
+                </p>
             </div>
             
-            <!-- PROFILE SUMMARY - COMPLETE -->
-            <div class="card">
-                <h3 class="section-title">
-                    <i class="fas fa-user-circle"></i> Profile Summary
-                </h3>
-                <p class="fs-5">Highly experienced administrative professional with <strong>19 years of service at the Road Development Authority (RDA), Sri Lanka</strong>, and currently working as Operations Support Assistant at RAK CERAMICS since August 2024. Proven expertise in office administration, documentation management, data entry, and public relations. Seeking to leverage extensive clerical experience and strong organizational skills in an administrative/office role within RAK CERAMICS. Known for reliability, attention to detail, and excellent communication abilities in corporate and government environments.</p>
-            </div>
-            
-            <!-- CORE COMPETENCIES - COMPLETE 12 ITEMS -->
-            <div class="card">
-                <h3 class="section-title">
-                    <i class="fas fa-star"></i> Core Competencies
-                </h3>
-                <div class="competency-grid">
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Office Administration & Coordination</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Filing & Documentation Management</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Data Entry (Fast & Accurate)</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> MS Word & Excel Proficiency</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Customer Service & Public Handling</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Report Preparation & Correspondence</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Scheduling & Meeting Coordination</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Document Control & Records Management</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Time Management & Productivity</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Communication Skills (Written & Verbal)</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Computer Literacy</div>
-                    <div class="competency-item"><i class="fas fa-check-circle text-success me-2"></i> Database Management</div>
+            <!-- RDA SRI LANKA -->
+            <div class="exp-card">
+                <div class="exp-title">
+                    <i class="fas fa-road text-success me-2"></i> Road Development Authority (RDA) - Sri Lanka
                 </div>
-            </div>
-            
-            <!-- PROFESSIONAL EXPERIENCE - RAK + RDA COMPLETE -->
-            <div class="card">
-                <h3 class="section-title">
-                    <i class="fas fa-briefcase"></i> Professional Experience
-                </h3>
+                <div class="fs-5 fw-semibold mb-2">Administrative Clerk / Document Controller</div>
+                <span class="exp-period">
+                    <i class="fas fa-calendar-alt me-2"></i> November 2004 – September 2023
+                    <span class="badge bg-dark ms-2">19 Years</span>
+                </span>
                 
-                <!-- RAK Ceramics -->
-                <div class="mb-5">
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="bg-primary text-white p-3 rounded-circle me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-building fs-2"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h4 class="mb-1">RAK CERAMICS - Ras Al Khaimah, UAE</h4>
-                            <h5 class="text-primary mb-2">Operations Support Assistant (Helper)</h5>
-                            <p class="mb-3"><i class="fas fa-calendar-alt me-2"></i> August 2024 – Present</p>
-                            <p class="mb-0">Currently employed at RAK CERAMICS, demonstrating strong work ethic, reliability, and adaptability in the manufacturing environment. Eager to transition into an administrative role within the organization to utilize extensive clerical and office management experience.</p>
-                        </div>
-                    </div>
-                </div>
+                <p class="exp-detail mt-3">
+                    Performed comprehensive clerical and administrative functions ensuring efficient office operations in a busy public-sector organization serving the road development sector.
+                </p>
                 
-                <!-- Road Development Authority - COMPLETE with all details -->
-                <div>
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="bg-success text-white p-3 rounded-circle me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-road fs-2"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h4 class="mb-1">Road Development Authority (RDA) - Sri Lanka</h4>
-                            <h5 class="text-success mb-2">Administrative Clerk / Document Controller</h5>
-                            <p class="mb-3"><i class="fas fa-calendar-alt me-2"></i> November 2004 – September 2023 <span class="badge bg-danger ms-2 fs-6">19 Years</span></p>
-                            <p class="mb-3">Performed comprehensive clerical and administrative functions ensuring efficient office operations in a busy public-sector organization serving the road development sector.</p>
-                            
-                            <h6 class="fw-bold mt-4 mb-3">Key Responsibilities & Achievements:</h6>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Managed complete documentation systems including filing, archiving, and retrieval of official records and correspondence</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Executed fast and accurate data entry for multiple databases, registers, logs, and spreadsheets</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Handled frontline public inquiries and customer service interactions with professionalism</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Prepared daily reports, internal memos, official letters, and government correspondence</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Maintained meticulous office registers, documentation workflows, and administrative records</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-              
+                <h6 class="mt-4 fw-bold">Key Responsibilities & Achievements:</h6>
+                <ul class="exp-list">
+                    <li><i class="fas fa-check-circle"></i> Managed and maintained official databases, registers, logs, and spreadsheets with high accuracy</li>
+                    <li><i class="fas fa-check-circle"></i> Handled frontline public inquiries and customer service interactions with professionalism</li>
+                    <li><i class="fas fa-check-circle"></i> Prepared daily reports, internal memos, official letters, and government correspondence</li>
+                    <li><i class="fas fa-check-circle"></i> Maintained meticulous office registers, documentation workflows, and administrative records</li>
+                    <li><i class="fas fa-check-circle"></i> Coordinated meetings, appointments, and office schedules</li>
+                    <li><i class="fas fa-check-circle"></i> Assisted in project documentation and tender processes</li>
+                    <li><i class="fas fa-check-circle"></i> Received "GOOD" rating for both Efficiency and General Conduct throughout service</li>
+                </ul>
+            </div>
+            
+            <!-- QR CODE SECTION -->
+            <div class="qr-box">
+                <div class="qr-code" id="qrCodeBox">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <h5 class="fw-bold mb-3">Digital Portfolio Access</h5>
+                <p class="text-muted mb-4">Scan QR code or click below to view complete portfolio</p>
+                <a href="https://sudeshmadushanka-blip.github.io/portfolio-website/" target="_blank" class="btn btn-primary btn-lg px-5 py-3" style="border-radius: 50px;">
+                    <i class="fas fa-external-link-alt me-2"></i> View Digital Portfolio
+                </a>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <h5 class="fw-bold mb-3"><i class="fas fa-file-contract me-2"></i> RAK CERAMICS EMPLOYEE RECORD</h5>
+            <p class="mb-1">Official Employee File No: 99018571 | Canary Shorting Department</p>
+            <p class="mb-1">Administrative Assistant | RAK Ceramics UAE, Ras Al Khaimah</p>
+            <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i> Updated: February 2026 | <i class="fas fa-star me-2"></i> Employee Status: Active</p>
+        </div>
+    </div>
+    
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <script>
+        // PDF Download Function
+        document.getElementById('downloadPDF').addEventListener('click', function() {
+            const element = document.getElementById('cv-content');
+            const btn = this;
+            
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Generating PDF...';
+            btn.disabled = true;
+            
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: 'Sudesh_Madushanka_RAK_Ceramics_CV.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,
+                    backgroundColor: '#ffffff',
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+            
+            html2pdf().set(opt).from(element).save()
+                .then(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                    alert('✅ CV Downloaded Successfully!');
+                })
+                .catch((error) => {
+                    console.error(error);
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                    alert('❌ Download failed. Please try again.');
+                });
+        });
+        
+        // Print Function
+        document.getElementById('printCV').addEventListener('click', function() {
+            window.print();
+        });
+        
+        // QR Code Click
+        document.getElementById('qrCodeBox').addEventListener('click', function() {
+            window.open('https://sudeshmadushanka-blip.github.io/portfolio-website/', '_blank');
+        });
+        
+        console.log('✅ RAK Ceramics CV Loaded - Sudesh Madushanka (ID: 99018571)');
+    </script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/di
