@@ -11,7 +11,7 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts for Creativity -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
@@ -23,7 +23,7 @@
         
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #0b2c4a 0%, #1a4a5f 100%);
+            background: linear-gradient(145deg, #0a1f3b 0%, #1a4a5f 100%);
             padding: 35px 20px;
             color: #1e293b;
         }
@@ -36,8 +36,6 @@
             box-shadow: 0 40px 80px rgba(0,0,0,0.35);
             overflow: hidden;
             position: relative;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
         }
         
         /* ---------- HEADER (UNCHANGED - EXACTLY AS USER WANTS) ---------- */
@@ -97,9 +95,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             overflow: hidden;
             background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .profile-photo {
@@ -175,7 +170,6 @@
             gap: 15px;
             box-shadow: 0 12px 25px rgba(46,204,113,0.4);
             transition: 0.4s;
-            border: 1px solid rgba(255,255,255,0.4);
         }
         
         .btn-print {
@@ -261,7 +255,7 @@
             background: #f39c12;
         }
         
-        /* Profile Summary - Enhanced */
+        /* Profile Summary Card */
         .profile-summary-card {
             background: linear-gradient(145deg, #f0f9ff, #e6f3ff);
             padding: 40px;
@@ -334,7 +328,6 @@
             border: 1px solid #edf2f7;
             margin-bottom: 35px;
             transition: 0.3s;
-            position: relative;
         }
         
         .exp-card:hover {
@@ -399,7 +392,6 @@
             width: 24px;
         }
         
-        /* Achievement Badges */
         .achievement-badge {
             background: #ffeaa7;
             border-radius: 16px;
@@ -478,7 +470,6 @@
             font-weight: 700;
             border: 1px solid #90caf9;
             transition: 0.3s;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
         }
         
         .skill-tag:hover {
@@ -517,7 +508,6 @@
         .progress-fill {
             height: 100%;
             border-radius: 20px;
-            position: relative;
             animation: fill 1.5s ease;
         }
         
@@ -578,13 +568,12 @@
             .main-content { padding: 35px 25px; }
             .section-title { font-size: 26px; }
             .employee-id { position: static; display: inline-block; margin-bottom: 15px; }
-            .exp-title { font-size: 24px; }
         }
     </style>
 </head>
 <body>
     <div class="cv-wrapper" id="cv-content">
-        <!-- ========== HEADER (UNCHANGED - AS USER PROVIDED) ========== -->
+        <!-- ========== HEADER (UNCHANGED - EXACTLY AS USER WANTS) ========== -->
         <div class="cv-header">
             <div class="employee-id">
                 <i class="fas fa-id-card me-2"></i> Employee ID: 99018571
@@ -649,10 +638,10 @@
             </div>
         </div>
         
-        <!-- ========== MAIN CONTENT (ENHANCED CREATIVE) ========== -->
+        <!-- ========== MAIN CONTENT - FULL DETAILS FROM YOUR DOCX ========== -->
         <div class="main-content">
             
-            <!-- █████████████ PROFILE SUMMARY - ENHANCED WITH RICH DETAILS █████████████ -->
+            <!-- █████████████ PROFILE SUMMARY - COMPLETE WITH ACHIEVEMENTS █████████████ -->
             <h2 class="section-title">
                 <i class="fas fa-user-circle me-2"></i> Profile Summary
             </h2>
@@ -661,4 +650,8 @@
                 <p style="font-size: 19px; font-weight: 500; position: relative; z-index: 2;">
                     <span class="highlight">19+ years</span> of distinguished administrative service, with 
                     <span class="highlight">19 years at Road Development Authority (RDA), Sri Lanka</span> 
-                    and currently s
+                    and currently serving as <strong>Operations Support Assistant at RAK CERAMICS</strong> (Aug 2024 – Present). 
+                    Proven track record in managing complete documentation systems for <strong>500+ infrastructure projects</strong>, 
+                    improving document retrieval efficiency by <strong>40%</strong>, and processing <strong>200+ documents daily with 100% accuracy</strong>.
+                </p>
+                <p style
