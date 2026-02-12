@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Sudesh Madushanka - Administrative Assistant | RAK Ceramics</title>
+    <title>Sudesh Madushanka - Administrative Professional | RAK Ceramics</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for Creativity -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -19,23 +22,25 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
-            padding: 30px 20px;
-            color: #2c3e50;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #0b2c4a 0%, #1a4a5f 100%);
+            padding: 35px 20px;
+            color: #1e293b;
         }
         
         .cv-wrapper {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             background: white;
-            border-radius: 28px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+            border-radius: 40px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.35);
             overflow: hidden;
             position: relative;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Header Section */
+        /* ---------- HEADER (UNCHANGED - EXACTLY AS USER WANTS) ---------- */
         .cv-header {
             background: linear-gradient(145deg, #0a1f3b, #0e2b4f);
             color: white;
@@ -144,6 +149,7 @@
             align-items: center;
             gap: 10px;
         }
+        /* ---------- HEADER END ---------- */
         
         /* Action Buttons */
         .action-bar {
@@ -229,240 +235,337 @@
         
         /* Main Content */
         .main-content {
-            padding: 45px;
+            padding: 50px 45px;
+            background: #ffffff;
         }
         
         .section-title {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
             color: #0b2c4a;
             border-bottom: 5px solid #e74c3c;
             padding-bottom: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             display: inline-block;
             letter-spacing: 1px;
+            position: relative;
         }
         
-        .profile-text {
-            background: #f1f9ff;
-            padding: 35px;
-            border-radius: 20px;
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 5px;
+            background: #f39c12;
+        }
+        
+        /* Profile Summary - Enhanced */
+        .profile-summary-card {
+            background: linear-gradient(145deg, #f0f9ff, #e6f3ff);
+            padding: 40px;
+            border-radius: 30px;
             font-size: 18px;
             line-height: 1.8;
-            border-left: 8px solid #3498db;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border-left: 10px solid #3498db;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-summary-card:before {
+            content: '“';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 150px;
+            color: rgba(52,152,219,0.1);
+            font-family: serif;
+        }
+        
+        .highlight {
+            background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
+            padding: 5px 15px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #2d3436;
+            display: inline-block;
+            margin: 5px 0;
         }
         
         .competency-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 18px;
             margin: 30px 0 45px;
         }
         
         .competency-item {
-            background: #f0f9ff;
-            padding: 15px 22px;
-            border-radius: 14px;
+            background: #f8fafc;
+            padding: 16px 22px;
+            border-radius: 16px;
             font-size: 17px;
             font-weight: 600;
-            border-left: 6px solid #3498db;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+            border-left: 8px solid #3498db;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.02);
             display: flex;
             align-items: center;
+            transition: 0.3s;
+        }
+        
+        .competency-item:hover {
+            background: #e3f2fd;
+            transform: translateY(-5px);
         }
         
         .competency-item i {
             color: #27ae60;
-            margin-right: 15px;
-            font-size: 20px;
+            margin-right: 18px;
+            font-size: 22px;
         }
         
         .exp-card {
             background: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
             border: 1px solid #edf2f7;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             transition: 0.3s;
+            position: relative;
         }
         
         .exp-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            border-color: #3498db;
         }
         
         .exp-title {
-            font-size: 26px;
-            font-weight: 800;
-            color: #0b2c4a;
-            margin-bottom: 12px;
-        }
-        
-        .exp-period {
-            display: inline-block;
-            background: #fff4e5;
-            padding: 10px 22px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 17px;
-            color: #2d3436;
-            margin: 15px 0;
-            border-left: 4px solid #e67e22;
-        }
-        
-        .exp-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 25px;
-        }
-        
-        .exp-list li {
-            padding: 12px 0;
-            border-bottom: 1px dashed #e2e8f0;
-            display: flex;
-            align-items: baseline;
-            gap: 15px;
-            font-size: 17px;
-        }
-        
-        .exp-list li i {
-            color: #27ae60;
-            font-size: 18px;
-            width: 22px;
-        }
-        
-        /* Education & Certificates Grid */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        
-        .edu-card {
-            background: #fafcff;
-            border-radius: 18px;
-            padding: 25px;
-            border-left: 6px solid #3498db;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-            border: 1px solid #e9ecef;
-        }
-        
-        .edu-card h4 {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 800;
             color: #0b2c4a;
             margin-bottom: 15px;
         }
         
-        .cert-badge {
-            background: #ffeaa7;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 14px;
+        .exp-sub {
+            font-size: 22px;
             font-weight: 700;
-            display: inline-block;
-            margin: 10px 0;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
         
-        .skill-badge {
-            background: #e3f2fd;
-            color: #1565c0;
-            padding: 10px 20px;
-            border-radius: 40px;
-            font-size: 15px;
-            font-weight: 700;
+        .exp-period {
             display: inline-block;
-            margin: 6px;
-            border: 1px solid #90caf9;
+            background: #fff4e5;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #2d3436;
+            margin: 15px 0;
+            border-left: 6px solid #e67e22;
+        }
+        
+        .badge-years {
+            background: #0b2c4a;
+            color: white;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-left: 20px;
+        }
+        
+        .exp-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+        
+        .exp-list li {
+            padding: 14px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            font-size: 17px;
+        }
+        
+        .exp-list li i {
+            color: #27ae60;
+            font-size: 20px;
+            width: 24px;
+        }
+        
+        /* Achievement Badges */
+        .achievement-badge {
+            background: #ffeaa7;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            border: 2px dashed #e67e22;
+        }
+        
+        .achievement-item {
+            background: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #2c3e50;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+        }
+        
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 35px 0;
+        }
+        
+        .edu-card {
+            background: #fafcff;
+            border-radius: 24px;
+            padding: 30px;
+            border-left: 8px solid #3498db;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.04);
+            border: 1px solid #e9ecef;
             transition: 0.3s;
         }
         
-        .skill-badge:hover {
-            background: #bbdefb;
-            transform: scale(1.05);
+        .edu-card:hover {
+            transform: translateY(-8px);
+            background: white;
+            border-left-color: #e74c3c;
         }
         
-        .lang-progress {
-            margin: 25px 0;
-        }
-        
-        .lang-item {
+        .edu-card h4 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0b2c4a;
             margin-bottom: 20px;
         }
         
-        .lang-item h6 {
+        .cert-badge {
+            background: #ffeaa7;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            display: inline-block;
+            margin: 8px 8px 8px 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .skill-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+            color: #0d47a1;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            border: 1px solid #90caf9;
+            transition: 0.3s;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+        }
+        
+        .skill-tag:hover {
+            background: #90caf9;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .lang-progress-modern {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 24px;
+            margin: 30px 0;
+        }
+        
+        .lang-item {
+            margin-bottom: 25px;
+        }
+        
+        .lang-header {
+            display: flex;
+            justify-content: space-between;
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
-        .progress {
-            height: 14px;
-            border-radius: 20px;
+        .progress-modern {
+            height: 16px;
             background: #ecf0f1;
-        }
-        
-        .progress-bar {
             border-radius: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        .certificate-photo {
-            width: 100%;
-            max-width: 280px;
-            border-radius: 14px;
-            margin: 20px auto;
-            display: block;
-            border: 4px solid #e74c3c;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            transition: 0.4s;
+        .progress-fill {
+            height: 100%;
+            border-radius: 20px;
+            position: relative;
+            animation: fill 1.5s ease;
         }
         
-        .certificate-photo:hover {
-            transform: scale(1.03);
+        @keyframes fill {
+            from { width: 0; }
+            to { width: 100%; }
         }
         
         .qr-box {
             background: linear-gradient(145deg, #f1f9ff, #e6f3ff);
-            padding: 45px;
-            border-radius: 28px;
+            padding: 50px;
+            border-radius: 40px;
             text-align: center;
-            margin-top: 50px;
-            border: 2px dashed #3498db;
+            margin-top: 60px;
+            border: 3px dashed #3498db;
         }
         
         .qr-code {
-            width: 170px;
-            height: 170px;
+            width: 180px;
+            height: 180px;
             background: white;
             margin: 0 auto 25px;
-            border-radius: 24px;
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 5px solid #3498db;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 6px solid #3498db;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.15);
             cursor: pointer;
-            transition: 0.4s;
+            transition: 0.5s;
         }
         
         .qr-code:hover {
-            transform: scale(1.08);
+            transform: rotate(5deg) scale(1.1);
+            border-color: #e74c3c;
         }
         
         .qr-code i {
-            font-size: 100px;
+            font-size: 110px;
             color: #0b2c4a;
         }
         
         .footer {
             background: linear-gradient(145deg, #0a1f3b, #0e2b4f);
             color: white;
-            padding: 35px;
+            padding: 40px;
             text-align: center;
-            font-size: 17px;
+            font-size: 18px;
             border-top: 6px solid #e74c3c;
         }
         
@@ -472,15 +575,16 @@
             .profile-container { justify-content: center; text-align: center; }
             .profile-photo-frame { width: 170px; height: 170px; }
             .contact-bar { flex-direction: column; align-items: flex-start; }
-            .main-content { padding: 30px 25px; }
+            .main-content { padding: 35px 25px; }
             .section-title { font-size: 26px; }
             .employee-id { position: static; display: inline-block; margin-bottom: 15px; }
+            .exp-title { font-size: 24px; }
         }
     </style>
 </head>
 <body>
     <div class="cv-wrapper" id="cv-content">
-        <!-- HEADER SECTION with PHOTO -->
+        <!-- ========== HEADER (UNCHANGED - AS USER PROVIDED) ========== -->
         <div class="cv-header">
             <div class="employee-id">
                 <i class="fas fa-id-card me-2"></i> Employee ID: 99018571
@@ -515,7 +619,7 @@
             </div>
         </div>
         
-        <!-- ACTION BUTTONS -->
+        <!-- ========== ACTION BUTTONS ========== -->
         <div class="action-bar">
             <button id="downloadPDF" class="btn-download">
                 <i class="fas fa-file-pdf"></i> Download PDF CV
@@ -525,7 +629,7 @@
             </button>
         </div>
         
-        <!-- CONTACT BAR -->
+        <!-- ========== CONTACT BAR ========== -->
         <div class="contact-bar">
             <div class="contact-item">
                 <i class="fas fa-phone-alt"></i>
@@ -545,65 +649,16 @@
             </div>
         </div>
         
-        <!-- MAIN CONTENT -->
+        <!-- ========== MAIN CONTENT (ENHANCED CREATIVE) ========== -->
         <div class="main-content">
-            <!-- PROFILE SUMMARY -->
+            
+            <!-- █████████████ PROFILE SUMMARY - ENHANCED WITH RICH DETAILS █████████████ -->
             <h2 class="section-title">
                 <i class="fas fa-user-circle me-2"></i> Profile Summary
             </h2>
             
-            <div class="profile-text">
-                <p class="mb-0 fs-5">Highly experienced administrative professional with <strong>19 years of service at the Road Development Authority (RDA), Sri Lanka</strong>, and currently working as Operations Support Assistant at <strong>RAK CERAMICS since August 2024</strong>. Proven expertise in office administration, documentation management, data entry, and public relations. Seeking to leverage extensive clerical experience and strong organizational skills in an administrative role within RAK Ceramics.</p>
-            </div>
-            
-            <!-- CORE COMPETENCIES -->
-            <h2 class="section-title">
-                <i class="fas fa-cogs me-2"></i> Core Competencies
-            </h2>
-            
-            <div class="competency-grid">
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Office Administration & Coordination</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Filing & Documentation Management</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Data Entry (Fast & Accurate)</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> MS Word & Excel Proficiency</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Customer Service & Public Handling</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Report Preparation & Correspondence</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Scheduling & Meeting Coordination</div>
-                <div class="competency-item"><i class="fas fa-check-circle"></i> Database & Register Maintenance</div>
-            </div>
-            
-            <!-- PROFESSIONAL EXPERIENCE -->
-            <h2 class="section-title">
-                <i class="fas fa-briefcase me-2"></i> Professional Experience
-            </h2>
-            
-            <!-- RAK CERAMICS -->
-            <div class="exp-card">
-                <div class="exp-title">
-                    <i class="fas fa-building text-primary me-2"></i> RAK CERAMICS - Ras Al Khaimah, UAE
-                </div>
-                <div class="fs-4 fw-semibold mb-2">Operations Support Assistant (Helper)</div>
-                <span class="exp-period">
-                    <i class="fas fa-calendar-alt me-2"></i> August 2024 – Present
-                </span>
-                <p class="fs-5 mt-3">
-                    Currently employed at RAK CERAMICS, demonstrating strong work ethic, reliability, and adaptability in the manufacturing environment. Eager to transition into an administrative role within the organization to utilize extensive clerical and office management skills.
-                </p>
-            </div>
-            
-            <!-- RDA SRI LANKA -->
-            <div class="exp-card">
-                <div class="exp-title">
-                    <i class="fas fa-road text-success me-2"></i> Road Development Authority (RDA) - Sri Lanka
-                </div>
-                <div class="fs-4 fw-semibold mb-2">Administrative Clerk / Document Controller</div>
-                <span class="exp-period">
-                    <i class="fas fa-calendar-alt me-2"></i> November 2004 – September 2023
-                    <span class="badge bg-dark text-white ms-3 px-4 py-2 fs-6">19 Years</span>
-                </span>
-                
-                <p class="fs-5 mt-3">
-                    Performed comprehensive clerical and administrative functions ensuring efficient office operations in a busy public-sector organization serving the road development sector.
-                </p>
-                
-                <h
+            <div class="profile-summary-card">
+                <p style="font-size: 19px; font-weight: 500; position: relative; z-index: 2;">
+                    <span class="highlight">19+ years</span> of distinguished administrative service, with 
+                    <span class="highlight">19 years at Road Development Authority (RDA), Sri Lanka</span> 
+                    and currently s
