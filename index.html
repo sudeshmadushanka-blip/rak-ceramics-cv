@@ -332,6 +332,31 @@
             border-top: 5px solid #3498db;
         }
         
+        .language-progress {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .language-name {
+            width: 80px;
+            font-weight: 600;
+        }
+        
+        .progress {
+            flex: 1;
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .portfolio-link {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            margin-top: 15px;
+        }
+        
         @media (max-width: 768px) {
             .profile-section {
                 flex-direction: column;
@@ -382,7 +407,7 @@
             </p>
             
             <div class="profile-section">
-                <img src="https://via.placeholder.com/200x200/2c3e50/ffffff?text=SM" 
+                <img src="sudesh.png" 
                      alt="Sudesh Madushanka" class="profile-photo">
                 
                 <div class="profile-info">
@@ -411,6 +436,19 @@
                 </button>
             </div>
             
+            <!-- Profile Summary -->
+            <div class="card">
+                <h3 class="section-title">
+                    <i class="fas fa-user-circle"></i> Profile Summary
+                </h3>
+                <p class="fs-5">Highly experienced administrative professional with 19 years of service at the Road Development Authority (RDA), Sri Lanka, and currently working as Operations Support Assistant at RAK CERAMICS since 2024. Proven expertise in office administration, documentation management, data entry, and public relations. Known for reliability, attention to detail, and excellent communication abilities in corporate and government environments.</p>
+                
+                <div class="portfolio-link mt-3">
+                    <i class="fas fa-globe text-primary"></i> <strong>Digital Portfolio:</strong> 
+                    <a href="https://sudeshmadushanka-blip.github.io/portfolio-website-/" target="_blank">sudeshmadushanka-blip.github.io/portfolio-website-</a>
+                </div>
+            </div>
+            
             <!-- Current Position -->
             <div class="card">
                 <h3 class="section-title">
@@ -419,6 +457,7 @@
                 <p class="fs-5"><strong>RAK Ceramics PJSC, Ras Al Khaimah, UAE</strong></p>
                 <p class="fs-5"><i class="fas fa-user-tie text-primary"></i> Operations Support Assistant</p>
                 <p class="fs-5"><i class="fas fa-building text-primary"></i> Canary Shorting Department</p>
+                <p class="fs-5"><i class="fas fa-calendar-alt text-primary"></i> August 2024 – Present</p>
                 
                 <h5 class="mt-4"><i class="fas fa-tasks"></i> Key Responsibilities:</h5>
                 <ul class="fs-5">
@@ -434,15 +473,27 @@
             <!-- RDA Service History -->
             <div class="card">
                 <h3 class="section-title">
-                    <i class="fas fa-history"></i> RDA Service History (19 Years)
+                    <i class="fas fa-history"></i> Previous Experience
                 </h3>
                 
-                <p class="fs-5"><strong>Road Development Authority (RDA) – Sri Lanka</strong></p>
-                <p class="fs-5">Administrative Clerk / Document Controller</p>
-                <p class="text-muted fs-5">
-                    <i class="fas fa-calendar-alt"></i> November 2004 – September 2023 
-                    <span class="badge bg-info fs-6">19 Years Experience</span>
-                </p>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle me-3">
+                        <i class="fas fa-road fs-2"></i>
+                    </div>
+                    <div>
+                        <h4 class="mb-1">Road Development Authority (RDA) – Sri Lanka</h4>
+                        <h5 class="text-primary">Administrative Clerk / Document Controller</h5>
+                        <p class="mb-0"><i class="fas fa-calendar-alt"></i> November 2004 – September 2023 <span class="badge bg-danger ms-2 fs-6">19 Years</span></p>
+                    </div>
+                </div>
+                
+                <!-- Service Letter Summary -->
+                <div class="alert alert-info">
+                    <i class="fas fa-file-alt"></i> <strong>RDA Service Letter (Ref: Director HRG&E):</strong><br>
+                    <span class="badge bg-success me-2">Efficiency: GOOD</span>
+                    <span class="badge bg-success me-2">Conduct: GOOD</span>
+                    <span class="badge bg-info">Cause of Leaving: Resign</span>
+                </div>
                 
                 <!-- RDA Service Timeline -->
                 <div class="service-timeline mt-4">
@@ -467,83 +518,32 @@
                     </div>
                 </div>
                 
-                <!-- RDA Service Letter -->
-                <div class="mt-4 p-4" style="background: #f8f9fa; border-radius: 15px; border-left: 5px solid #27ae60;">
-                    <h6><i class="fas fa-file-alt text-success"></i> RDA Service Letter Summary:</h6>
-                    <p class="mb-1"><strong>Position held:</strong> Clerk</p>
-                    <p class="mb-1"><strong>Total Service:</strong> 19 Years</p>
-                    <p class="mb-1"><strong>Efficiency Rating:</strong> <span class="badge bg-success">GOOD</span></p>
-                    <p class="mb-0"><strong>General Conduct:</strong> <span class="badge bg-success">GOOD</span></p>
-                </div>
+                <h5 class="mt-4"><i class="fas fa-tasks"></i> Key Responsibilities & Achievements:</h5>
+                <ul class="fs-5">
+                    <li>Managed complete documentation systems including filing, archiving, and retrieval of official records and correspondence</li>
+                    <li>Executed fast and accurate data entry for multiple databases, registers, logs, and spreadsheets</li>
+                    <li>Handled frontline public inquiries and customer service interactions with professionalism and courtesy</li>
+                    <li>Prepared daily reports, internal memos, official letters, and government correspondence</li>
+                    <li>Maintained meticulous office registers, documentation workflows, and administrative records</li>
+                    <li>Coordinated effectively with engineers, supervisors, government officials, and external stakeholders</li>
+                    <li>Managed incoming and outgoing communications including emails, postal mail, and telephone correspondence</li>
+                    <li>Supported senior staff with scheduling, meeting arrangements, and follow-up tasks</li>
+                    <li>Contributed to the development and implementation of efficient administrative procedures</li>
+                    <li>Ensured compliance with government regulations, office protocols, and documentation standards</li>
+                </ul>
                 
                 <!-- RDA Training Certificate -->
                 <div class="mt-4">
-                    <h5><i class="fas fa-certificate text-warning"></i> RDA Training Certificate:</h5>
+                    <h5><i class="fas fa-certificate text-warning"></i> RDA Clerical Training Certificate (2005):</h5>
                     <img src="All certificate.jpg" alt="RDA Clerical Training Certificate" class="certificate-photo">
                     <p class="text-center mt-2">
                         <strong>Clerical Officers Training Programme</strong><br>
-                        <span class="text-muted">Training Division of Road Development Authority | March 2005</span>
+                        <span class="text-muted">Training Division of Road Development Authority | March 11-12, 2005</span>
                     </p>
-                </div>
-            </div>
-            
-            <!-- Education -->
-            <div class="card">
-                <h3 class="section-title">
-                    <i class="fas fa-graduation-cap"></i> Education
-                </h3>
-                
-                <!-- National Certificate -->
-                <div class="mb-4">
-                    <h5><i class="fas fa-certificate text-primary"></i> National Certificate in Engineering Draughtsmanship</h5>
-                    <p class="mb-1">Technical College, Nuwara Eliya | 2002</p>
-                    <img src="IMG-20250907-WA0001.jpg" alt="Engineering Draughtsmanship Certificate" class="certificate-photo">
-                    <div class="mt-3">
-                        <strong>Subjects Completed:</strong> 
-                        <span class="badge bg-info m-1">Computer Aided Design (C)</span>
-                        <span class="badge bg-info m-1">Structural Mechanics (S)</span>
-                        <span class="badge bg-info m-1">Construction Draughtsmanship (S)</span>
-                        <span class="badge bg-info m-1">Geometrical & Mechanical Drawing (S)</span>
-                    </div>
+                    <p><strong>Training covered:</strong> Rules and regulations, Office procedures, Duties and responsibilities, Public relations</p>
                 </div>
                 
-                <!-- GCE O/L -->
-                <div class="mb-4">
-                    <h5><i class="fas fa-certificate text-primary"></i> G.C.E. Ordinary Level - 1997</h5>
-                    <p class="mb-1">Index No: 74608568</p>
-                    <img src="General Certificate of Education (Ordinary Level) Examination.jpg" 
-                         alt="GCE O/L Certificate" class="certificate-photo">
-                    <div class="mt-3">
-                        <strong>Results:</strong>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-success">Buddhism (C)</span>
-                            <span class="badge bg-success">Sinhala Language & Literature (C)</span>
-                            <span class="badge bg-success">Music – Sinhala (C)</span>
-                            <span class="badge bg-info">History & Social Studies (S)</span>
-                            <span class="badge bg-info">Mathematics (S)</span>
-                            <span class="badge bg-success">Metal Work (C)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Taisei Corporation Training -->
-                <div>
-                    <h5><i class="fas fa-certificate text-primary"></i> Practical Training - Taisei Corporation</h5>
-                    <p class="mb-1">Project for Improvement of Nuwara Eliya Water Supply | 2002-2003</p>
-                    <img src="IMG-20250907-WA0000_edit_142405357270935.jpg" 
-                         alt="Taisei Corporation Training Certificate" class="certificate-photo">
-                    <div class="mt-3">
-                        <strong>Training Areas:</strong>
-                        <div class="skills-badges">
-                            <span class="skill-badge">Building & Pipe Bridge Constructions</span>
-                            <span class="skill-badge">Pressure Testing Procedure</span>
-                            <span class="skill-badge">Surveying</span>
-                            <span class="skill-badge">Pipe Laying Works (DCIP & PVC)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Certifications & Training -->
-            <div class="card">
-          
+                <!-- Time Management Certificate -->
+                <div class="mt-4">
+                    <h5><i class="fas fa-clock text-warning"></i> Time Management & Productivity Workshop (2012):</h5>
+ 
